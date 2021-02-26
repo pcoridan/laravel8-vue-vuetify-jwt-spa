@@ -75,13 +75,12 @@ class AuthController extends Controller
     protected function respondWithToken($token)
     {
 
-
         $test = response()->json([
             'accessToken' => $token,
             'tokenType' => 'bearer',
             'expiresIn' => auth()->factory()->getTTL() * 60
         ]);
-        dump($test);
+
         return $test;
     }
 }
